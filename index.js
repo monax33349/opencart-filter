@@ -14,7 +14,6 @@ $(document).ready(function(){
     }
 }); 
 
-
 function urlFilter() {
     var urlPars = location.pathname.split('/').filter(function(item, i, mas){if(i==mas.length-1) return true;});
     localStorage.setItem('category', urlPars);
@@ -32,28 +31,7 @@ else {
 var max_price = parseFloat('135184');
 var current_max_price = parseFloat($('#price-to').val());
 var min_price = parseFloat('7344');
-var current_min_price = parseFloat($('#price-from').val());
-
-
-// $('#slider-price').slider({
-//     range   : true,
-//     min     : min_price,
-//     max     : max_price,
-//     values  : [ current_min_price, current_max_price ],
-//     slide   : function (event, ui) {
-//         $('#price-from').val(ui.values[0]);
-//         $('#price-to').val(ui.values[1]);
-//         current_min_price = ui.values[0];
-//         current_max_price = ui.values[1];
-//         localStorage.setItem('price-from', current_min_price);
-//         localStorage.setItem('price-to', current_max_price);		
-//     },
-//     stop    : function (event, ui) {
-//         filter_url = $('.price-url').val();
-//         filter_url += '&price=' + current_min_price + ',' + current_max_price;
-//         ocfilter.filter(filter_url);
-//     }
-// });
+var current_min_price = parseFloat($('#price-from').val());    
 
 $(document).ajaxComplete(function () {
     var current_min_price = parseFloat($('#price-from').val());
